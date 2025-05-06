@@ -1,68 +1,106 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { FaLock, FaBolt, FaMapMarkedAlt, FaBook } from "react-icons/fa";
+
 export default function Features() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: { 
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: { 
+      y: 0, 
+      opacity: 1,
+      transition: { duration: 0.5 }
+    }
+  };
+
   return (
-    <section className="py-12 bg-gray-50 rounded-xl">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">مميزات السكن مع مأوي</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+    <section className="py-16 bg-gray-50 rounded-2xl my-12">
+      <motion.div 
+        className="container mx-auto px-4"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={containerVariants}
+      >
+        <motion.div variants={itemVariants} className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">مميزات السكن مع مأوي</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
             نحرص على توفير تجربة سكن مريحة وآمنة لجميع عملائنا
           </p>
-        </div>
+        </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Feature 1 */}
-          <div className="text-center">
-            <div className="w-16 h-16 mx-auto mb-4 bg-primary text-white rounded-full flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-              </svg>
+          <motion.div 
+            variants={itemVariants}
+            className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 text-center group"
+            whileHover={{ y: -5 }}
+          >
+            <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-primary to-primary-dark text-white rounded-2xl flex items-center justify-center transform group-hover:rotate-6 transition-transform duration-300">
+              <FaLock className="h-10 w-10" />
             </div>
-            <h3 className="text-lg font-bold mb-2">أمان وخصوصية</h3>
-            <p className="text-gray-600">
+            <h3 className="text-xl font-bold mb-3 text-gray-800">أمان وخصوصية</h3>
+            <p className="text-gray-600 leading-relaxed">
               أنظمة أمان متطورة وخصوصية كاملة لجميع المقيمين
             </p>
-          </div>
+          </motion.div>
           
           {/* Feature 2 */}
-          <div className="text-center">
-            <div className="w-16 h-16 mx-auto mb-4 bg-primary text-white rounded-full flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
+          <motion.div 
+            variants={itemVariants}
+            className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 text-center group"
+            whileHover={{ y: -5 }}
+          >
+            <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-blue-500 to-indigo-600 text-white rounded-2xl flex items-center justify-center transform group-hover:rotate-6 transition-transform duration-300">
+              <FaBolt className="h-10 w-10" />
             </div>
-            <h3 className="text-lg font-bold mb-2">إنترنت فائق السرعة</h3>
-            <p className="text-gray-600">
+            <h3 className="text-xl font-bold mb-3 text-gray-800">إنترنت فائق السرعة</h3>
+            <p className="text-gray-600 leading-relaxed">
               اتصال إنترنت سريع ومستقر في جميع الوحدات السكنية
             </p>
-          </div>
+          </motion.div>
           
           {/* Feature 3 */}
-          <div className="text-center">
-            <div className="w-16 h-16 mx-auto mb-4 bg-primary text-white rounded-full flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-              </svg>
+          <motion.div 
+            variants={itemVariants}
+            className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 text-center group"
+            whileHover={{ y: -5 }}
+          >
+            <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-purple-500 to-pink-500 text-white rounded-2xl flex items-center justify-center transform group-hover:rotate-6 transition-transform duration-300">
+              <FaMapMarkedAlt className="h-10 w-10" />
             </div>
-            <h3 className="text-lg font-bold mb-2">مواقع متميزة</h3>
-            <p className="text-gray-600">
+            <h3 className="text-xl font-bold mb-3 text-gray-800">مواقع متميزة</h3>
+            <p className="text-gray-600 leading-relaxed">
               سكن قريب من الجامعات والمراكز التعليمية والخدمية
             </p>
-          </div>
+          </motion.div>
           
           {/* Feature 4 */}
-          <div className="text-center">
-            <div className="w-16 h-16 mx-auto mb-4 bg-primary text-white rounded-full flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-              </svg>
+          <motion.div 
+            variants={itemVariants}
+            className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 text-center group"
+            whileHover={{ y: -5 }}
+          >
+            <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-teal-500 to-green-500 text-white rounded-2xl flex items-center justify-center transform group-hover:rotate-6 transition-transform duration-300">
+              <FaBook className="h-10 w-10" />
             </div>
-            <h3 className="text-lg font-bold mb-2">بيئة دراسية</h3>
-            <p className="text-gray-600">
+            <h3 className="text-xl font-bold mb-3 text-gray-800">بيئة دراسية</h3>
+            <p className="text-gray-600 leading-relaxed">
               مساحات مخصصة للدراسة وبيئة هادئة تساعد على التركيز
             </p>
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 } 
