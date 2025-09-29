@@ -69,7 +69,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-medium text-gray-800">الهاتف</h3>
-                    <p className="text-gray-600">+2 012 3456 7890</p>
+                    <p className="text-gray-600">+20 1224 90 0205</p>
                   </div>
                 </div>
                 
@@ -81,7 +81,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-medium text-gray-800">البريد الإلكتروني</h3>
-                    <p className="text-gray-600">info@mawa-housing.com</p>
+                    <p className="text-gray-600">ashams3719262@gmail.com</p>
                   </div>
                 </div>
                 
